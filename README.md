@@ -32,7 +32,7 @@ variable "example_org" { default = "example.org" }
 # Route 53 aliases
 ######################
 module "virsas_com_endpoint" {
-  source        = "github.com/virsas/terraform_route53_alias"
+  source        = "git::https://github.com/virsas/terraform_route53_alias.git?ref=v1.0.0"
   zone_id       = module.virsas_com_route53.zone_id
   name          = var.example_org
   endpoint      = module.alb_virsas.dns_name
